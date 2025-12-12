@@ -1,7 +1,7 @@
 // ---------------- server.js ----------------
 require("dotenv").config(); // Load .env variables
 
-console.log("MONGO_URI =", process.env.MONGO_URI);
+
 
 
 
@@ -23,6 +23,7 @@ const ADMIN_PASSWORD_HASH = bcrypt.hashSync(process.env.ADMIN_PASSWORD || "admin
 
 
 // ---------------- MONGODB CONNECTION ----------------
+// ---------------- MONGODB CONNECTION ----------------
 const mongoose = require("mongoose");
 
 const MONGO_URI = process.env.MONGO_URI;
@@ -31,13 +32,10 @@ if (!MONGO_URI) {
   process.exit(1);
 }
 
-mongoose.connect(MONGO_URI, {
-  // these options are optional for newer Mongoose versions
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log("MongoDB connected"))
-.catch(err => console.error("MongoDB connection error:", err));
+// Remove deprecated options
+mongoose.connect(MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.error("MongoDB connection error:", err));
 
 
 
