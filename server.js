@@ -1,7 +1,7 @@
 // ---------------- server.js ----------------
 require("dotenv").config(); // Load .env variables
 const express = require("express");
-const mongoose = require("mongoose");
+
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const PDFDocument = require("pdfkit");
@@ -15,12 +15,25 @@ const JWT_SECRET = process.env.JWT_SECRET || "default_secret";
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
 const ADMIN_PASSWORD_HASH = bcrypt.hashSync(process.env.ADMIN_PASSWORD || "adminpass", 8);
 
-// ---------------- MONGODB CONNECTION ----------------
-const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/school_orders";
 
-mongoose.connect(MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch(err => console.error("MongoDB connection error:", err));
+
+// ---------------- MONGODB CONNECTION ----------------
+const mongoose = require("mongoose");
+
+const MONGO_URI = process.env.MONGO_URI;
+if (!MONGO_URI) {
+  console.error("ERROR: MONGO_URI is not set in environment variables");
+  process.exit(1);
+}
+
+mongoose.connect(MONGO_URI, {
+  // these options are optional for newer Mongoose versions
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log("MongoDB connected"))
+.catch(err => console.error("MongoDB connection error:", err));
+
 
 
 // ---------------- MONGOOSE SCHEMAS ----------------
