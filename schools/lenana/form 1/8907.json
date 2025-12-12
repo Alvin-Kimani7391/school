@@ -1,0 +1,29 @@
+{
+  "schoolName": "lenana",
+  "className": "form 1",
+  "regNumber": "8907",
+  "studentName": "henry",
+  "buyerName": "John Barasa",
+  "buyerPhone": "0705152282",
+  "buyerEmail": "alvinkimani685@gmail.com",
+  "cart": [
+    {
+      "id": 2,
+      "make": "JBL - Wireless Bluetooth TWS-4",
+      "model": "",
+      "category": "airpods",
+      "description": "JBL TWS-4: Truly-wireless earbuds with Bluetooth 5.0, sweat-proof design, snug fit, and portable charging case.",
+      "general": "accesories",
+      "year": 2023,
+      "color": "White",
+      "price": 700,
+      "oldPrice": 800,
+      "image": [
+        "images2/earpods2.jpg",
+        "images2/earpods2II.jpg"
+      ],
+      "link": "images/samsunggaI0"
+    }
+  ],
+  "timestamp": "2025-12-10T21:09:21.712Z"
+}

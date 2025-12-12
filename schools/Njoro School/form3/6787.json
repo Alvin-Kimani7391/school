@@ -1,0 +1,57 @@
+{
+  "schoolName": "Njoro School",
+  "className": "form3",
+  "regNumber": "6787",
+  "studentName": "john Mwangi",
+  "buyerName": "mercy",
+  "buyerPhone": "0111976842",
+  "buyerEmail": "alvinkimani685@gmail.com",
+  "buyerAddress": "school",
+  "cart": [
+    {
+      "id": 1,
+      "make": "NUNIX M1",
+      "model": "3.1 Woofer",
+      "category": "system",
+      "description": "Nunix M1 3.1CH Home Theatre System: 3.1‑channel audio system with Bluetooth, USB/SD/FM support and powerful 12,000 W PMPO output for rich surround sound.",
+      "general": "appliances",
+      "year": 2023,
+      "color": "White",
+      "price": 7440,
+      "oldPrice": 7600,
+      "image": "images2/system1.jpg",
+      "link": "images/samsunggaI0"
+    },
+    {
+      "id": 2,
+      "make": "JBL - Wireless Bluetooth TWS-4",
+      "model": "",
+      "category": "airpods",
+      "description": "JBL TWS-4: Truly-wireless earbuds with Bluetooth 5.0, sweat-proof design, snug fit, and portable charging case.",
+      "general": "accesories",
+      "year": 2023,
+      "color": "White",
+      "price": 700,
+      "oldPrice": 800,
+      "image": [
+        "images2/earpods2.jpg",
+        "images2/earpods2II.jpg"
+      ],
+      "link": "images/samsunggaI0"
+    },
+    {
+      "id": 3,
+      "make": "Ramtons RM/579 Blender with Mill",
+      "model": "",
+      "category": "blender",
+      "description": "Ramtons RM/579: 1.5L blender with 500W motor, stainless steel blades, 2-speed + pulse settings, and mill attachment for grinding",
+      "general": "Kitchenaccesories",
+      "year": 2023,
+      "color": "White",
+      "price": 5499,
+      "image": "images2/blender3.jpg",
+      "link": "images/samsunggaI0"
+    }
+  ],
+  "timestamp": "2025-12-08T22:58:22.659Z"
+}

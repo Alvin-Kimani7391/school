@@ -1,0 +1,26 @@
+{
+  "schoolName": "zendy",
+  "className": "zz",
+  "regNumber": "2323",
+  "studentName": "wery",
+  "buyerName": "John Barasa",
+  "buyerPhone": "0705152282",
+  "buyerEmail": "alvinkimani685@gmail.com",
+  "cart": [
+    {
+      "id": 1,
+      "make": "NUNIX M1",
+      "model": "3.1 Woofer",
+      "category": "system",
+      "description": "Nunix M1 3.1CH Home Theatre System: 3.1‑channel audio system with Bluetooth, USB/SD/FM support and powerful 12,000 W PMPO output for rich surround sound.",
+      "general": "appliances",
+      "year": 2023,
+      "color": "White",
+      "price": 7440,
+      "oldPrice": 7600,
+      "image": "images2/system1.jpg",
+      "link": "images/samsunggaI0"
+    }
+  ],
+  "timestamp": "2025-12-10T22:02:24.845Z"
+}

@@ -1,0 +1,51 @@
+<!-- public/admin.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Admin Dashboard - School Orders</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .login { max-width: 360px; margin: 20px auto; }
+    .hidden { display:none; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .flex { display:flex; gap:10px; align-items:center; }
+    table { width:100%; border-collapse: collapse; margin-top:10px; }
+    th, td { padding:8px; border:1px solid #ddd; text-align:left; }
+    button { padding:6px 10px; }
+    .controls { display:flex; gap:8px; margin-bottom:10px; }
+  </style>
+</head>
+<body>
+  <div class="login" id="loginBox">
+    <h2>Admin Login</h2>
+    <input id="username" placeholder="username" /><br/><br/>
+    <input id="password" type="password" placeholder="password" /><br/><br/>
+    <button id="loginBtn">Login</button>
+    <p id="loginError" style="color:red;"></p>
+  </div>
+
+  <div id="app" class="container hidden">
+    <div class="flex">
+      <h2>School Orders Admin</h2>
+      <div style="margin-left:auto;">
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </div>
+
+    <div class="controls">
+      <select id="schoolSelect"><option value="">--Select School--</option></select>
+      <select id="classSelect"><option value="">--Select Class--</option></select>
+      <input id="searchReg" placeholder="Search Reg Number or Student name" />
+      <button id="refreshBtn">Refresh</button>
+      <button id="exportPdfBtn">Download PDF</button>
+      <button id="exportExcelBtn">Download Excel</button>
+    </div>
+
+    <div id="summary"></div>
+    <div id="ordersList"></div>
+  </div>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

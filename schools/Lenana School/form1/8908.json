@@ -1,0 +1,26 @@
+{
+  "schoolName": "Lenana School",
+  "className": "form1",
+  "regNumber": "8908",
+  "studentName": "Aklm illk",
+  "buyerName": "mercy",
+  "buyerPhone": "0111976842",
+  "buyerEmail": "alvinkimani685@gmail.com",
+  "buyerAddress": "omat",
+  "cart": [
+    {
+      "id": 3,
+      "make": "Ramtons RM/579 Blender with Mill",
+      "model": "",
+      "category": "blender",
+      "description": "Ramtons RM/579: 1.5L blender with 500W motor, stainless steel blades, 2-speed + pulse settings, and mill attachment for grinding",
+      "general": "Kitchenaccesories",
+      "year": 2023,
+      "color": "White",
+      "price": 5499,
+      "image": "images2/blender3.jpg",
+      "link": "images/samsunggaI0"
+    }
+  ],
+  "timestamp": "2025-12-01T19:16:13.631Z"
+}
