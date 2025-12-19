@@ -1,10 +1,12 @@
 /* ===== GLOBAL RESET ===== */
 * {
+  -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 html, body {
+  scroll-behavior: smooth;
   max-width: 100%;
   overflow-x: hidden;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -239,7 +241,18 @@ ul.show { left: 0; }
   margin: 10px 0;
   color: #666666;
 }
-
+.Paymentcontent{
+  display: block;
+  height: 500px;
+  background-color: #a8a8a8;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.payment{
+  display: block;
+  justify-content: center;
+}
 /*.product-item-info h3{
     
   white-space: nowrap;      Prevent wrapping 
@@ -683,7 +696,7 @@ header{
     text-align: start;
     padding: 1em;
     display: flex;
-    position: static;
+    position: sticky;
 }
 header p{
     font-size: 2.8em;
@@ -734,50 +747,103 @@ header button{
 
 
 
-.Paymentcontent{
-  height: 500px;
-  background-color: #a8a8a8;
-  text-align: center;
+/* ===================== PAYMENT SECTION MOBILE STYLING ===================== */
+.Paymentcontent {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-}
-.Paymentcontent h1{
-  text-decoration: underline;
-}
-.Paymentcontent .payment{
-  margin-left: 37%;
-  
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  background-color: #fffdfd;
-  width: 400px;
-  height: 400px;
-  border-radius: 10px ;
-}
-.payment{
-  margin-left: 39%;
-  margin-top: 0%;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  background-color: #fffdfd;
-  width: 300px;
-  height: 300px;
-  border-radius: 17px ;
-}
-.payment a{
   padding: 20px;
-  margin: 20px;
+  min-height: 400px;
+  width: 100%;
+  background-color: #f0f0f0; /* softer gray */
+  text-align: center;
 }
-.payment i{
-  font-size: 8em;
+
+.Paymentcontent h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 350px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.payment i {
+  font-size: 6em;
   color: orange;
+  margin-bottom: 15px;
 }
-.payment span p{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 1.3em;
+
+.payment span p {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.payment a {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1em;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.payment a:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 600px) {
+  .Paymentcontent {
+    padding: 15px;
+  }
+
+  .Paymentcontent h1 {
+    font-size: 1.6em;
+  }
+
+  .payment {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .payment i {
+    font-size: 5em;
+  }
+
+  .payment span p {
+    font-size: 1.1em;
+  }
+
+  .payment a {
+    width: 100%;
+    font-size: 1em;
+    padding: 12px 0;
+  }
 }
 /* ===================== CONTACT SECTION ===================== */
 #contact {
@@ -915,161 +981,325 @@ header button{
   }
 }
 
-/* Phones (<=600px): 2 per row */
+
+/* ===============================
+   FORCE 1 PRODUCT PER ROW (PHONE)
+   =============================== */
 @media (max-width: 600px) {
-  header { font-size: 1.4em; }
-  nav a { font-size: 0.9em; padding: 6px; }
-  #searchbar { width: 90%; 
-    font-size: 1em;
-    padding: 15px;
-  }
-nav button{
-    position: absolute;
-   font-size: 0.9em;
-}
-#button{
-  position: absolute;
-  margin-top: -25px;
-  margin-left: -5px;
-  
-}
-.list {
-  z-index: 1000;
-  left: -260px;
-  position: absolute;
-  top: 70px;
-  padding-top: 70px;
-  background: linear-gradient(180deg, rgb(107,103,103), grey 100%);
-  width: 240px;
-  height: 100vh;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
-  border: 2px solid #035c5c;
-  overflow-y: auto;
-  transition: left 0.3s ease;
-}
-.list li{
-    list-style-type: none;
-    
-    font-size: 0.8em;
-    padding: 5px 7px;
-  margin: 2px 4px;
 
-}
-.cart-box{
-  width: 90%;
-}
-.cart{
-  width: 90%;
-}
-.cart-item-info h3{
-  font-size: 0.75em;
-  white-space: nowrap;      /* Prevent wrapping */
-  overflow: hidden;         /* Hide extra text */
-  text-overflow: ellipsis;  /* Add "..." */
-}
-
-.mycart-item-info h3{
-  font-size: 0.75em;
-  white-space: nowrap;      /* Prevent wrapping */
-  overflow: hidden;         /* Hide extra text */
-  text-overflow: ellipsis;  /* Add "..." */
-}
-.cart-item-info p{
-  font-size: 0.8em;
-}
-.mycart-item-info p{
-  font-size: 0.8em;
-}
-.cart-item-info button{
-    padding: 6px 10px;
-    font-size: 0.8em;
-  }
-  .mycart-item-info button{
-    padding: 6px 10px;
-    font-size: 0.8em;
-  }
-.hotsearches-buttons button{
-  padding: 12px 3px;
-  text-align: center;
-  font-size: 0.8em;
-    background: rgb(224, 220, 220);
-}
   .product {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;   /* center items */
-    gap: 15px;
+    flex-direction: column;   /* stack vertically */
+    align-items: center;
+    gap: 16px;
   }
 
   .product-item {
-    flex: 0 0 calc(50% - 15px);  /* 2 per row */
-    max-width: calc(50% - 15px);
-    height: auto;/* allow height to adjust naturally */
-    padding-bottom: 10px;  /* add space under button */
+    width: 100%;
+    max-width: 92%;          /* nice mobile margin */
+    margin: 0 auto;
   }
-  .product-item img{
-    height: 140px;        /* smaller Jumia-like height */
-  object-fit: cover;  /* prevents zoom cropping */
-          /* adds clean spacing around images */
+
+  .product-item img {
+    width: 100%;
+    height: 200px;           /* clean mobile image size */
+    object-fit: contain;
   }
-  .product-item-info h3{
-    font-size: 0.75em;
-    font-weight: bold;
-    overflow: hidden;         /* Hide extra text */
-  text-overflow: ellipsis;  /* Add "..." */
-  white-space: nowrap;
-  width: 100%;
-  }
-  .product-item-info p{
-    font-size: 0.8em;
-  }
-  .addbtn{
-    padding: 6px 10px;
-    font-size: 0.8em;
-  }
-  #show-cart-btn{
-    padding: 12px 6px;
-    margin: 4px auto;
+
+  .product-item-info h3 {
     font-size: 1em;
+    white-space: normal;     /* allow wrapping */
   }
-  .cart-summary{
-    font-size: 1.3em;   
+
+  .addbtn {
+    width: 100%;             /* full-width button */
+    font-size: 1em;
+    padding: 12px;
+    margin-top: 10px;
+  }
+ 
 }
-  #pagination {
-  text-align: center;
-  margin: 14px auto;
+
+
+   header {
+    display: flex;
+    flex-direction: column;   /* p on top, links below */
+    align-items: flex-start;
+  }
+
+  header div {
+    display: flex;            /* links in one row */
+    flex-direction: row;
+    flex-wrap: nowrap;        /* ❌ prevent wrapping */
+    gap: 12px;
+    margin-left: -2%;
+    margin-top: 8px;
+  }
+
+  header div a {
+    white-space: nowrap;      /* keep text on one line */
+    font-size: 0.8em;
+  }
+
+  header p {
+    font-size: 2.0em;
+    margin-left: 8%;
+  }
+  header button{
+    font-size: 2.3em;
+  margin-top: -5px;
+  margin-right: -14px;
+  }
+
+#button {
+  font-size: 2.3em;
+  top: -5px;
+  margin-left: -14px;
 }
-  #pagination button {
-  margin: 7px;
-  padding: 9px 12px;
-  font-size: 0.9em;
-  font-weight: bold;
-  border-radius: 10px;
+/* ===== NAVIGATION ===== */
+/* ===== NAVIGATION ===== */
+nav {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  background-color: #1c1c1c;
+  height: 60px;
+  padding: 0 40px;  /* space for arrows */
+  overflow: hidden;
 }
-.hotsearches{
+
+/* Scrollable container for links */
+.nav-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  flex: 1;               /* take full space between arrows */
+}
+
+.nav-scroll::-webkit-scrollbar {
+  display: none;         /* Chrome/Safari */
+}
+
+.nav-scroll a {
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-scroll a.active {
+  background-color: orange;
+  color: white;
+}
+
+.nav-scroll a:hover {
+  background-color: #ff9900;
+  color: white;
+}
+
+/* Arrows */
+.nav-arrow {
+  background: rgba(0,0,0,0.3);
+  border: none;
+  color: white;
+  font-size: 1.8em;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.nav-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* Responsive */
+@media(max-width: 600px){
+  nav {
+    padding: 0 10px;
+  }
+
+  .nav-scroll a {
+    font-size: 1em;
+    padding: 10px 14px;
+  }
+
+  .nav-arrow {
+    font-size: 1.5em;
+    padding: 0 6px;
+  }
+}
+
+
+
+@keyframes arrowPulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+
+
+
+  
+
+/* ===== Button Touch Feedback ===== */
+button, a {
+  
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s;
+}
+
+button:active, a:active {
+  transform: scale(0.96);
+}
+
+/* ===== Floating Cart Button (Mobile) ===== */
+@media (max-width: 600px) {
+  #show-cart-btn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 999;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    border-radius: 50px;
+  }
+  #show-cart-btn.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+ 
+}
+.cart-box,.cart {
   width: 90%;
-  height: auto;
+  height: 70%;
 }
-#searchbar{
-  margin-top: 5px;
+
+/* ===== Product Card Interaction ===== */
+.product-item {
+  animation: fadeUp 0.6s ease both;
+}}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-  footer{
-    font-size: 0.7em;
-    text-align: center;
-    justify-content: center;
+
+/* Touch ripple feel */
+.product-item:active {
+  transform: scale(0.97);
+}
+
+/* ===== Image soft zoom on tap ===== */
+.product-item img {
+  transition: transform 0.35s ease;
+}
+
+.product-item:active img {
+  transform: scale(1.08);
+}
+
+/* ===== Mobile Sidebar Slide + Overlay ===== */
+@media (max-width: 600px) {
+  .list {
+    transition: left 0.3s ease, box-shadow 0.3s ease;
   }
-  .footer1{
-    gap: 10px;
+
+  ul.show {
+    box-shadow: 6px 0 18px rgba(0,0,0,0.35);
   }
-  .footer2 p{
-    font-size: 1.1em;
+}
+
+/* ===== Search Bar Focus Effect ===== */
+#searchbar {
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  width: 80%;
+}
+
+#searchbar:focus {
+  border-color: orange;
+  box-shadow: 0 0 0 3px rgba(255,165,0,0.25);
+}
+
+/* ===== Hot Searches Animation ===== */
+.hotsearches-content {
+  animation: slideDown 0.35s ease both;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  .footer1 i{
-    font-size: 30px !important;  /* 👍 smaller icons for mobile */
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  .footer1 section a i{
-    font-size: 30px !important;
+}
+
+/* ===== Cart Modal Animation ===== */
+.cart-box, .cart {
+  animation: scaleIn 0.35s ease both;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Add to Cart Button Enhancement ===== */
+.addbtn {
+  position: relative;
+  overflow: hidden;
+}
+
+.addbtn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.25);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.addbtn:active::after {
+  opacity: 1;
+}
+
+/* ===== Mobile Footer Spacing ===== */
+@media (max-width: 600px) {
+  footer {
+    padding-bottom: 90px; /* room for floating cart */
+  }
+}
+
+/* ===== Reduce Motion (Accessibility) ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }

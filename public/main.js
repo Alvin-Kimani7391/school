@@ -31,10 +31,9 @@ window.addEventListener("click", e => {
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let cars = [];
 let currentPage = 1;
-const productsPerPage = 26;
+const productsPerPage = 3;
 
 //cars reshuffle
-
 function shufflearray(array){
 
 for(let i=array.length-1;i>0;i--){
@@ -53,7 +52,7 @@ function sendOrderToSeller() {
 document.getElementById("orderForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
   if (cart.length === 0) {
     alert("Your cart is empty!");
     return;
@@ -101,7 +100,8 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
 
       const sellerPhone = "254794327798";
       const whatsappURL = `https://wa.me/${sellerPhone}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappURL, "_blank");
+      window.location.href = whatsappURL;
+
 
       localStorage.removeItem("cart");
       if (typeof displaycart === "function") displaycart();
@@ -130,10 +130,10 @@ function addToCart(id) {
   const car = cars.find(c => c.id === id);
   if (!car) return;
 
-  if (cart.some(item => item.id === car.id)) {
+  /*if (cart.some(item => item.id === car.id)) {
     alert(`${car.make} ${car.model} is already in your cart.`);
     return;
-  }
+  }*/
 
   cart.push(car);
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -142,10 +142,27 @@ function addToCart(id) {
   alert(`${car.make} ${car.model} added to cart successfully!`);
 }
 
-function removeFromCart(index) {
+function removeFromCart(id) {
+  cart = cart.filter(item => item.id !== id);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  refreshCartUI();
+  displaycart();
+  displaymycart();
+  updateshowcart();
+}
+
+
+/*function removeFromCart(index) {
   cart.splice(index, 1);
   localStorage.setItem("cart", JSON.stringify(cart));
   displaycart();
+  displaymycart();
+  updateshowcart();
+
+}*/
+
+function refreshCartUI() {
+   displaycart();
   displaymycart();
   updateshowcart();
 }
@@ -177,7 +194,7 @@ function displaymycart() {
         <img src="${imgSrc}" alt="${item.make} ${item.model}" style="width:50px;height:auto;">
         <h3>${item.make} ${item.model}</h3>
         <p><strong>Price: Ksh.${item.price.toLocaleString()}</strong></p>
-        <button class="removebtn" onclick="removeFromCart(${index})">Remove</button>
+        <button class="removebtn" onclick="removeFromCart(${item.id})">Remove</button>
       </div>`;
     mycartcontent.appendChild(div);
   });
@@ -207,7 +224,7 @@ function displaycart() {
         <img src="${imgSrc}" alt="${item.make} ${item.model}" style="width:50px;height:auto;">
         <h3>${item.make} ${item.model}</h3>
         <p><strong>Price: Ksh.${item.price.toLocaleString()}</strong></p>
-        <button class="removebtn" onclick="removeFromCart(${index})">Remove</button>
+        <button class="removebtn" onclick="removeFromCart(${item.id})">Remove</button>
       </div>`;
     cartcontainer.appendChild(div);
   });
@@ -304,7 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     renderPagination(totalPages);
-    cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
     updateshowcart();
   }
 
@@ -373,11 +390,27 @@ document.addEventListener("click", (e) => {
   const showcartbtn=document.getElementById("show-cart-btn");
 // Load 
 // sgthe car data and initialize
-    showcartbtn.addEventListener("click",()=>{
-        displaycart();
-        popup.style.display = 'flex';
+    if (showcart) {
+  showcartbtn.addEventListener("click", () => {
+    displaymycart();
+    popup.style.display = "flex";
+  });
+}
 
-    });
+
+    const footer = document.getElementById("contact");
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY + window.innerHeight;
+  const footerTop = footer.offsetTop;
+
+  if(scrollY >= footerTop) {
+    showcartbtn.classList.add('hidden'); // hide button
+  } else {
+    showcartbtn.classList.remove('hidden'); // show button
+  }
+});
+
 //to update the cart when add products in cartv,html
   window.addEventListener("pageshow",()=>{
     cart=JSON.parse(localStorage.getItem("cart")) || [];

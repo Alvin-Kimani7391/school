@@ -70,10 +70,15 @@
 
         <nav>
             
-            <a  ><button class="filter-btn active" data-category="all">All</button></a>
-            <a ><button class="filter-btn" data-category="mouse">University </button></a>
-            <a ><button class="filter-btn" data-category="fridge">Senoir Secondary</button></a>
-            <a ><button class="filter-btn" data-category="microwave">Junior Secondary</button></a>
+          <span class="nav-arrow left">‹</span>
+  <span class="nav-arrow right">›</span>
+
+            <div class="nav-scroll">
+    <a href="#" class="filter-btn active" data-category="all">ALL</a>
+<a href="#" class="filter-btn" data-category="university">University</a>
+<a href="#" class="filter-btn" data-category="highschool">High School</a>
+<a href="#" class="filter-btn" data-category="junior">Junior Secondary</a>
+  </div>
 
            
             
@@ -125,7 +130,9 @@
         
         
         <div class="product" id="product"></div><br>
-        <button id="show-cart-btn">Shop</button><br><br>
+        <button id="show-cart-btn">Shop</button>
+
+      <div id="pagination" class="pagination"></div>
 
         <div id="popup" class="popup">
           <div class="cart">
@@ -135,18 +142,19 @@
             
 
         
-        </div><br><br>
+        </div>
 
        
 
         </div>
         
-        <div id="cart-total"></div></div>
+        <div id="cart-total"></div>
 
 
-         <div id="Paymentcontent" class="Paymentcontent"><br>
-          <h1>Payment</h2><br>
-          <div class="payment"><br>
+
+         <div id="Paymentcontent" class="Paymentcontent">
+          <h1>Payment</h2>
+          <div class="payment">
             <i class="fa-solid fa-mobile-screen fa-xxl" style="color: #000000;"></i>
             <h2>M-PESA</h2>
             <p>Pay quickly and securely via M-Pesa</p>
@@ -243,7 +251,7 @@
   </div>
 </section>
 
-        <div id="pagination" class="pagination"></div>
+        
            
         
         <div id="mycart" class="mycart">
@@ -375,6 +383,48 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+const navScroll = document.querySelector('.nav-scroll');
+const leftArrow = document.querySelector('.nav-arrow.left');
+const rightArrow = document.querySelector('.nav-arrow.right');
+const scrollStep = 180; // pixels per click
+
+// Scroll left
+leftArrow.addEventListener('click', () => {
+  navScroll.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+});
+
+// Scroll right
+rightArrow.addEventListener('click', () => {
+  navScroll.scrollBy({ left: scrollStep, behavior: 'smooth' });
+});
+
+// Update arrow visibility
+function updateArrows() {
+  leftArrow.disabled = navScroll.scrollLeft <= 0;
+  rightArrow.disabled = navScroll.scrollLeft + navScroll.clientWidth >= navScroll.scrollWidth;
+}
+
+// Initialize
+updateArrows();
+
+// Update on scroll
+navScroll.addEventListener('scroll', updateArrows);
+window.addEventListener('resize', updateArrows);
+
+
+const navLinks = document.querySelectorAll('.nav-scroll a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.forEach(l => l.classList.remove('active')); // remove from all
+    link.classList.add('active'); // add to clicked
+  });
+});
+
+
+
 </script>  
     </body>
     <script src="main.js"></script>
