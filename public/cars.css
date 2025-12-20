@@ -1055,7 +1055,9 @@ header button{
   margin-top: -10px;
   margin-right: -5px;
   }
-
+#showcart{
+  font-size: 1.2em;
+}
 #button {
   font-size: 1.7em;
   top: -5px;

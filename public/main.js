@@ -311,10 +311,10 @@ document.addEventListener("DOMContentLoaded", () => {
       div.innerHTML = `
         <img src="${imgSrc}" alt="${car.make} ${car.model}" onclick="openProduct(${car.id})">
         <div class="product-item-info">
-          <h3>${car.make} ${car.model}</h3><br>
+          <h3>${car.make} ${car.model}</h3>
           <p class="price"><strong><strong>Price: Ksh.${car.price.toLocaleString()}</strong></strong></p>
-          ${oldPriceHtml}<br>
-          <p class="des">${car.description || ""}</p><br>
+          ${oldPriceHtml}
+          <p class="des">${car.description || ""}</p>
           <button class="addbtn" onclick="addToCart(${car.id})">Add To Cart</button>
         </div>`;
       carscontainer.appendChild(div);
