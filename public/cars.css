@@ -1007,13 +1007,15 @@ header button{
   }
 
   .product-item-info h3 {
-    font-size: 1em;
+    font-size: 0.75em;
     white-space: normal;     /* allow wrapping */
   }
-
+.product-item-info p{
+  font-size: 0.8em;
+}
   .addbtn {
     width: 100%;             /* full-width button */
-    font-size: 1em;
+    font-size: 0.8em;
     padding: 12px;
     margin-top: 10px;
   }
@@ -1022,12 +1024,14 @@ header button{
 
 
    header {
+    
     display: flex;
     flex-direction: column;   /* p on top, links below */
     align-items: flex-start;
   }
 
   header div {
+    
     display: flex;            /* links in one row */
     flex-direction: row;
     flex-wrap: nowrap;        /* ❌ prevent wrapping */
@@ -1038,11 +1042,12 @@ header button{
 
   header div a {
     white-space: nowrap;      /* keep text on one line */
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
 
   header p {
-    font-size: 2.0em;
+    
+    font-size: 1.5em;
     margin-left: 8%;
   }
   header button{
@@ -1059,7 +1064,7 @@ header button{
 /* ===== NAVIGATION ===== */
 /* ===== NAVIGATION ===== */
 nav {
-  position: sticky;
+  
   display: flex;
   align-items: center;
   background-color: #1c1c1c;
@@ -1131,7 +1136,7 @@ nav {
   }
 
   .nav-scroll a {
-    font-size: 1em;
+    font-size: 0.9em;
     padding: 10px 14px;
   }
 
@@ -1167,6 +1172,7 @@ button:active, a:active {
 /* ===== Floating Cart Button (Mobile) ===== */
 @media (max-width: 600px) {
   #show-cart-btn {
+    font-size: 1em;
     position: fixed;
     bottom: 15px;
     right: 15px;
@@ -1185,7 +1191,20 @@ button:active, a:active {
   width: 90%;
   height: 70%;
 }
-
+.cart-summary{
+  font-size: 1.3em;
+}
+ #pagination {
+  text-align: center;
+  margin: 14px auto;
+}
+#pagination button {
+  margin: 7px;
+  padding: 9px 12px;
+  font-size: 0.9em;
+  font-weight: bold;
+  border-radius: 10px;
+}
 /* ===== Product Card Interaction ===== */
 .product-item {
   animation: fadeUp 0.6s ease both;
@@ -1230,7 +1249,8 @@ button:active, a:active {
 /* ===== Search Bar Focus Effect ===== */
 #searchbar {
   transition: box-shadow 0.25s ease, border-color 0.25s ease;
-  width: 80%;
+  width: 90%;
+  font-size: 1em;
 }
 
 #searchbar:focus {
@@ -1291,8 +1311,37 @@ button:active, a:active {
 
 /* ===== Mobile Footer Spacing ===== */
 @media (max-width: 600px) {
-  footer {
-    padding-bottom: 90px; /* room for floating cart */
+  .contact-info h1{
+    font-size: 1.7em;
+  }
+  .contact-info p{
+    font-size: 1.3em;
+  }
+.info-item h2{
+    font-size: 1em;
+  }
+  .info-item i{
+    font-size: 1.5em;
+  }
+  .info-item p{
+    font-size: 0.9em;
+  }
+  footer{
+    font-size: 0.7em;
+    text-align: center;
+    justify-content: center;
+  }
+  .footer1{
+    gap: 10px;
+  }
+  .footer2 p{
+    font-size: 1.1em;
+  }
+  .footer1 i{
+    font-size: 30px !important;  /* 👍 smaller icons for mobile */
+  }
+  .footer1 section a i{
+    font-size: 30px !important;
   }
 }
 
