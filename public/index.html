@@ -302,7 +302,7 @@
             <div class="footer1">
             <section>
                 <h2>Customer service</h2>
-                <a href="contact.html">Contact Us/Visit Us</a>
+                <a href="#contact">Contact Us/Visit Us</a>
                 <a href="about.html">FAQs</a>
                 <a href="https://wa.me/254715418492?text=Hello%20I%20want%20to%20track%20my%20order">Track My Order</a>
 
@@ -383,6 +383,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 150);
     });
   });
+});
+
+// Hide loader when page is loaded or restored from bfcache
+function hideLoader() {
+  const loader = document.getElementById("loader");
+  if (loader) {
+    loader.style.display = "none";
+    loader.style.opacity = "0";
+  }
+}
+
+window.addEventListener("load", hideLoader);
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) { // page restored from bfcache
+    hideLoader();
+  }
 });
 
 
