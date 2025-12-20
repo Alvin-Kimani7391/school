@@ -31,7 +31,7 @@ window.addEventListener("click", e => {
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let cars = [];
 let currentPage = 1;
-const productsPerPage = 3;
+const productsPerPage = 4;
 
 //cars reshuffle
 function shufflearray(array){
