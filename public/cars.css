@@ -1036,13 +1036,13 @@ header button{
     flex-direction: row;
     flex-wrap: nowrap;        /* ❌ prevent wrapping */
     gap: 12px;
-    margin-left: -2%;
+    margin-left: -6%;
     margin-top: 8px;
   }
 
   header div a {
     white-space: nowrap;      /* keep text on one line */
-    font-size: 0.7em;
+    font-size: 0.5em;
   }
 
   header p {
