@@ -1042,7 +1042,7 @@ header button{
 
   header div a {
     white-space: nowrap;      /* keep text on one line */
-    font-size: 0.5em;
+    font-size: 0.7em;
   }
 
   header p {
@@ -1051,9 +1051,9 @@ header button{
     margin-left: 8%;
   }
   header button{
-    font-size: 1.3em;
-  margin-top: -8px;
-  margin-right: -20px;
+    font-size: 1.0em;
+  margin-top: -10px;
+  margin-right: -28px;
   }
 
 #button {
