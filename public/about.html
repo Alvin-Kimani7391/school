@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify Selling Products Online - About</title>
+  <script src="https://kit.fontawesome.com/e1426ab85b.js" crossorigin="anonymous"></script>
+  <style>
+    /* General Styles */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {  
+      line-height: 1.6; 
+      background: white; 
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                margin: 0;
+                padding: 0;
+                align-items: center;
+    justify-content: center;
+    }
+    main { max-width: 1000px; margin: auto; padding: 40px; }
+    h1, h2 { text-align: center; margin-bottom: 20px; color: orange; }
+    p { font-size: 1.2em; margin-bottom: 15px; }
+    
+    /* Feedback Button */
+    /* Feedback Button */
+    #loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none; /* or your background color */
+  backdrop-filter: blur(5px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Dots */
+#loader .dot {
+  width: 15px;
+  height: 15px;
+  margin: 0 8px;
+  background: orange; /* dot color */
+  border-radius: 50%;
+  animation: bounce 0.6s infinite ease-in-out;
+}
+
+/* Delay each dot for rhythm effect */
+#loader .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+#loader .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.7); /* how big they grow */
+  }
+}
+#feedbackBtn {
+    display: block;
+    margin: 30px auto;
+    background-color: rgb(228, 171, 67); /* main site teal */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#feedbackBtn:hover {
+    background-color:rgb(247, 175, 43);
+}
+
+/* Modal Styles */
+.order-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.order-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    text-align: left;
+    position: relative;
+}
+
+.order-modal-content h2 {
+    margin-top: 0;
+    color: orange;
+}
+
+.order-modal-content input, 
+.order-modal-content textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#submitFeedbackBtn {
+    background-color:rgb(216, 151, 31);
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#submitFeedbackBtn:hover {
+    background-color: rgb(255, 166, 0);
+    color: white;
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #236666;
+}
+
+/* Contact Info Section */
+.contact-info {
+   background: #000000;
+    
+    
+    color: orange ;
+    font-size: 1em;
+    font-style: italic;
+     /* match main site teal */
+     /* text white for contrast */
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 14px solid orange;
+    font-style: italic;
+}
+
+.contact-info:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px;
+}
+
+
+
+.contact-info strong {
+    color: orange; /* lighter teal accent */
+}
+
+.contact-info a {
+    color: #918d8d;
+    text-decoration: underline;
+}
+
+.contact-info a:hover {
+    color: #e9ecec;
+}
+@media (max-width: 600px) {
+  #about{
+    justify-content: center;
+        align-items: center;
+        text-align: center;
+  }
+  h2{font-size:1.0em ;}
+  p{font-size: 0.7em;}
+  #about p{
+    font-size: 1.0em;
+  }
+  .contact-info {
+    width: 100%;
+    font-size: 0.8em;
+    padding: 34px 0;
+  }
+  .contact-info i {
+    font-size: 22px !important; 
+    /* 👍 smaller icons for mobile */
+  }
+  .contact-info p {
+  display: flex;
+  flex-wrap: wrap; /* 🔥 ALLOWS TEXT TO GO TO NEXT LINE */
+  overflow: visible; /* prevent clipping */
+}
+#feedbackBtn{
+  font-size: 0.8em;;
+}
+
+
+}
+
+  </style>
+</head>
+<body>
+  <div id="loader">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+
+<main>
+  <!-- About Section -->
+  <section id="about">
+    <h1>Our Story</h1>
+    <p>Welcome to our online shop! We offer a wide range of products with secure online shopping and fast delivery right to your doorstep. Our goal is to provide quality products at competitive prices, while ensuring a smooth and reliable shopping experience.</p>
+
+    <h2>Orders & Payments</h2>
+    <p>First-time customers may use Payment on Delivery (POD).
+
+For all subsequent orders, customers are required to pay 50% upfront at the time of placing the order, with the remaining balance payable upon delivery.
+
+All orders are subject to verification and availability.</p>
+    <h2>Delivery Information</h2>
+    <p>We deliver across all regions every Saturday from 9:00am.
+
+Delivery fees vary depending on your location and will be communicated before order confirmation.
+
+Once your order is dispatched, you will receive tracking updates and notifications until your package arrives.</p>
+    <h2>Returns & Refunds (7-Day Policy)</h2>
+    <p>If you are not satisfied with your purchase, you may request a refund or return within 7 days of delivery.
+
+Returned products must be in their original packaging, unused, and in resaleable condition.
+
+Some items (e.g., personal-use items, customized items, or consumables) may not be eligible for return.
+
+Contact our customer support to initiate a return or refund request.</p>
+
+<h2>Product Information</h2>
+    <p>We strive to provide accurate product descriptions, images, and pricing. However, errors may occur, and we reserve the right to correct them without prior notice.
+
+Product colors may vary slightly due to lighting or device display differences.</p>
+
+<h2>Liability</h2>
+    <p>We are not liable for damages resulting from misuse of our products.</p>
+
+    <h2>Customer Feedback</h2>
+    <p>We value your feedback! If you have any suggestions, questions, or concerns, please reach out to our customer support. We aim to respond as quickly as possible.</p>
+  <h2>Privacy Policy</h2>
+    <p>We respect your privacy and protect your personal information. We collect data like name, email, and order details to process purchases, improve our services, and communicate with you. We do not sell your data. By using our site, you agree to our privacy practices.We respect your privacy and protect your personal information. We collect data like name, email, and order details to process purchases, improve our services, and communicate with you. We do not sell your data. By using our site, you agree to our privacy practices.</p>
+    <button id="feedbackBtn">Give Feedback</button>
+
+    <section class="contact-info">
+      <p><i class="fa-brands fa-whatsapp fa-2xl" style="color: #0ee132;"></i><strong>Customer Support:</strong><br>+254 715 418 492</p>
+      <p><i class="fa-regular fa-envelope fa-2xl" style="color: #ffffff;"></i><strong></i>Email:</strong><br><a href="mailto:alvinkimani685@gmail.com?subject=Customer%20Support&body=Hello%2C%20I%20need%20help%20with..." id="email">
+  feedbackzionsupplier@gmail.com
+</a> </p>
+</section>
+    
+  </section>
+
+  <!-- Feedback Modal -->
+  <div id="feedbackModal" class="order-modal">
+    <div class="order-modal-content">
+      <span class="close-btn" id="closeFeedback">&times;</span>
+      <h2>Customer Feedback</h2>
+
+      <form id="feedbackForm" method="POST" action="https://formspree.io/f/mpwyozjj" >
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <input type="tel" id="tel" name="tel" placeholder="Your Phone Number" required>
+        <textarea id="comment"  name="message" placeholder="Your Feedback" rows="5" required></textarea>
+        <button type="submit" id="submitFeedbackBtn">Submit Feedback</button>
+      </form>
+      
+    </div>
+  </div>
+</main>
+
+<script>
+  // Feedback Modal Logic
+  const feedbackModal = document.getElementById('feedbackModal');
+  const feedbackBtn = document.getElementById('feedbackBtn');
+  const closeFeedback = document.getElementById('closeFeedback');
+  const feedbackForm = document.getElementById('feedbackForm');
+
+  // Open modal
+  feedbackBtn.addEventListener('click', () => {
+    feedbackModal.style.display = 'flex';
+  });
+
+  // Close modal
+  closeFeedback.addEventListener('click', () => {
+    feedbackModal.style.display = 'none';
+  });
+
+  // Close when clicking outside modal content
+  window.addEventListener('click', (e) => {
+    if (e.target === feedbackModal) {
+      feedbackModal.style.display = 'none';
+    }
+  });
+
+  // Handle form submission
+  /*feedbackForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('customerName').value.trim();
+    const email = document.getElementById('customerEmail').value.trim();
+    const feedback = document.getElementById('customerFeedback').value.trim();
+
+    if (name && email && feedback) {
+      let feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+      feedbacks.push({ name, email, feedback, date: new Date().toLocaleString() });
+      localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+
+      alert(`Thank you, ${name}, for your feedback!`);
+      feedbackForm.reset();
+      feedbackModal.style.display = 'none';
+    } else {
+      alert("Please fill in all fields.");
+    }
+  });*/
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("a[href]").forEach(link => {
+    const href = link.getAttribute("href");
+
+    // 1. skip empty hrefs
+    if (!href) return;
+
+    // 2. skip anchors (#something)
+    if (href.startsWith("#")) return;
+
+    // 3. only show loader when going to another HTML page
+    if (!href.endsWith(".html")) return;
+
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      const loader = document.getElementById("loader");
+      loader.style.display = "flex";
+      loader.style.opacity = "1";
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 150);
+    });
+  });
+});
+</script>
+</body>
+</html>

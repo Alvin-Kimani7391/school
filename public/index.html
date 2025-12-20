@@ -60,7 +60,7 @@
                 
 
   
-  <li><a  >About</a></li>
+  <li><a href="about.html" >About</a></li>
   <li><a  >Contact</a></li>
   
   
@@ -166,7 +166,7 @@
 </span>
 
 <br>
-<a>After payment, send the confirmation message to 0701179812 / 0789915856</a>
+<a>After payment, send the confirmation message to 0715418492 / 0111976842</a>
           </div></div>
 
 <section id="contact">
@@ -181,7 +181,7 @@
         <i class="fa-solid fa-phone fa-lg"></i>
         <div>
           <h2>Call Us</h2>
-          <p>0701179812</p>
+          <p>+254 715 418 492</p>
         </div>
       </div>
 
@@ -189,7 +189,8 @@
         <i class="fa-brands fa-whatsapp fa-lg"></i>
         <div>
           <h2>WhatsApp</h2>
-          <p>0701179812</p>
+          <p>+254 715 418 492</p>
+          <p>+254 111 976 842</p>
         </div>
       </div>
 
@@ -197,7 +198,7 @@
         <i class="fa-regular fa-envelope fa-lg"></i>
         <div>
           <h2>Email</h2>
-          <p>info@scitechsupplies.co.ke</p>
+          <p>feedbackzionsupplier@gmail.com</p>
         </div>
       </div>
 
@@ -222,30 +223,30 @@
     <section class="contact-form">
       <h2>Send Us a Message</h2>
 
-      <form>
-        <label>Your Name</label>
-        <input type="text" placeholder="Enter your full name">
+      <form id="feedbackForm" method="POST" action="https://formspree.io/f/mpwyozjj">
+  <label>Your Name</label>
+  <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
-        <label>Your Email</label>
-        <input type="email" placeholder="Enter your email">
+  <label>Your Email</label>
+  <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-        <label>Your Phone</label>
-        <input type="text" placeholder="07XXXXXXXX">
+  <label>Your Phone</label>
+  <input type="tel" id="tel" name="tel" placeholder="07XXXXXXXX">
 
-        <label>Product of Interest</label>
-        <select>
-          <option>Select a product</option>
-          <option>Microscopes</option>
-          <option>Test Kits</option>
-          <option>Lab Equipment</option>
-          <option>Reagents</option>
-        </select>
+  <label>Product of Interest</label>
+  <select name="product" required>
+    <option value="">Select a product</option>
+    <option value="Ream Paper">Ream Paper</option>
+    <option value="Calculator">Calculator</option>
+    <option value="Glue Stick">Glue Stick</option>
+  </select>
 
-        <label>Message</label>
-        <textarea rows="5" placeholder="Type your message..."></textarea>
+  <label>Message</label>
+  <textarea name="message" rows="5" placeholder="Type your message..." required></textarea>
 
-        <button type="submit" class="send-btn">Send Message</button>
-      </form>
+  <button type="submit" class="send-btn">Send Message</button>
+</form>
+
     </section>
 
   </div>
