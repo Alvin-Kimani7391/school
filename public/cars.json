@@ -18,7 +18,7 @@
         "id": 2,
         "make": "Faber Castel Glue Stick",
         "model": "",
-        "category":"airpods",
+        "category":"junior",
         "description": "Easy-to-apply adhesive stick for clean, fast bonding of paper and crafts with no mess.",
         "general":"accesories",
         "year": 2023,
@@ -40,7 +40,7 @@
          "general":"Kitchenaccesories",
         "year": 2023,
         "color": "White",
-        "price": 5499,
+        "price": 985,
         
         "image":"images2/calc82.webp",
         "link":"images/samsunggaI0"
@@ -48,7 +48,7 @@
     {
         "id": 4,
         "make": "Oxford Mathematical Set",
-        "model": "",
+        "model": "(Transparent)",
         "category":"highschool",
         "description": "Complete geometry tool set with rulers, protractor, compass, and accessories for accurate math drawing and measurement.",
          "general":"Kitchenaccesories",
@@ -89,16 +89,218 @@
     },
     {
         "id": 7,
-        "make": "E PAPER",
-        "model": "Ream Paper",
-        "category":"highschool",
-        "description": "High-quality A4 printing paper with smooth, bright finish for clear, jam-free copying and printing.",
+        "make": "Faber Castell Colour Pencils",
+        "model": "",
+        "category":"junior",
+        "description": "Triangular colour pencils with 24 bright shades, smooth leads, and a comfortable grip for easy colouring.",
         "general":"appliances",
         "year": 2023,
         "color": "White",
-        "price": 590,
-        "oldPrice":630,
+        "price": 800,
+        "oldPrice":830,
+        "image":"images2/color2.jpg",
+        "link":"images/samsunggaI0"
+    },
+    {
+        "id": 8,
+        "make": "E Paper",
+        "model": "Ream Paper",
+        "category":"highschool",
+        "description": "Superior A4 copy paper featuring a bright, smooth finish for crisp, jam-free prints.",
+        "general":"appliances",
+        "year": 2023,
+        "color": "White",
+        "price": 800,
+        "oldPrice":830,
         "image":"images2/ream4.jpg",
         "link":"images/samsunggaI0"
+    },
+    {
+        "id": 9,
+        "make": "Ceramic Modeling Clay 500g",
+        "model": "",
+        "category":"lower",
+        "description": "Somo-Smooth ceramic modeling clay that is easy to shape and ideal for crafting, sculpting, and creative projects.",
+        "general":"appliances",
+        "year": 2023,
+        "color": "White",
+        "price": 500,
+        "oldPrice":550,
+        "image":"images2/modelingclay1.jpg",
+        "link":"images/samsunggaI0"
+    },
+    {
+        "id": 10,
+        "make": "Leto White Board Marker Refill Ink",
+        "model": "12pcs",
+        "category":"lower",
+        "description": "White board marker refill ink with smooth flow and rich color for clear, long-lasting writing.",
+        "general":"appliances",
+        "year": 2023,
+        "color": "White",
+        "price": 900,
+        "oldPrice":980,
+        "image":"images2/ink1.webp",
+        "link":"images/samsunggaI0"
+    },
+    {
+        "id": 11,
+        "make": "ACRYLIC PAINT 12 COLOURS ",
+        "model": "9ML",
+        "category":"lower",
+        "description": "12 vibrant acrylic colors – bright, fast-drying, and ready for any surface!",
+        "general":"appliances",
+        "year": 2023,
+        "color": "White",
+        "price": 450,
+        "oldPrice":490,
+        "image":[
+            "images2/paint1.jpg",
+            "images2/paint2.jpg"
+        ],
+        "link":"images/samsunggaI0"
+    },
+    {
+        "id": 12,
+        "make": "Staedtler Tradition Pencil ",
+        "model": "",
+        "category":"lower",
+        "description": "Staedtler Tradition Pencil – smooth, precise, and perfect for writing or drawing!",
+        "general":"appliances",
+        "year": 2023,
+        "color": "White",
+        "price": 50,
+        "oldPrice":80,
+        "image":[
+            "images2/pencil1.jpg",
+            "images2/pencil2.jpg",
+            "images2/pencil12.jpg"
+        ],
+        "link":"images/samsunggaI0"
+    },
+    {
+        "id": 13,
+        "make": "MASKING TAPE - 50 METERS",
+        "model": "",
+        "category":"lower",
+        "description": "Masking Tape – 50 meters of easy-to-tear, strong, and clean-stick tape for all your projects!",
+        "general":"appliances",
+        "year": 2023,
+        "color": "White",
+        "price": 900,
+        "oldPrice":980,
+        "image":"images2/tape13.jpg",
+        "link":"images/samsunggaI0"
+    },
+    {
+        "id": 14,
+        "make": "Kangaro Staples Pins 24/6-5M ",
+        "model": "",
+        "category":"lower",
+        "description": "Kangaro Staples Pins 24/6-5M – 5,000 strong, reliable staples for smooth, secure fastening.",
+        "general":"appliances",
+        "year": 2023,
+        "color": "White",
+        "price": 320,
+        "oldPrice":380,
+        "image":[
+            "images2/stapler14I.jpg",
+            "images2/stapler14II.jpg"
+        ],
+        "link":"images/samsunggaI0"
+    },
+    {
+        "id": 15,
+        "make": "Oxford Mathematical Set",
+        "model": "",
+        "category":"lower",
+        "description": "Oxford Mathematical Set – precise, durable tools for accurate drawing and geometry.",
+        "general":"appliances",
+        "year": 2023,
+        "color": "White",
+        "price": 350,
+        "oldPrice":400,
+        "image":[
+            "images2/oxford15I.jpg",
+            "images2/oxford15II.jpg"
+        ],
+        "link":"images/samsunggaI0"
+    },
+    {
+        "id": 16,
+        "make": "VENDA Crayons Colours",
+        "model": "8pcs (360) 12pcs (600)",
+        "category":"lower",
+        "description": "VENDA My Cool Crayons – bright, smooth colors for fun and creative coloring!",
+        "general":"appliances",
+        "year": 2023,
+        "color": "White",
+        "price": 360,
+        "oldPrice":400,
+        "image":[
+            "images2/color16I.jpg",
+            "images2/color16II.jpg"
+        ],
+        "link":"images/samsunggaI0"
+    },
+    {
+        "id": 16,
+        "make": "Poster Tempera Washable Poster Paints",
+        "model": "12 Colors",
+        "category":"lower",
+        "description": "Bright, washable paints for easy, mess-free creativity.",
+        "general":"appliances",
+        "year": 2023,
+        "color": "White",
+        "price": 470,
+        "oldPrice":520,
+        "image":[
+            "images2/paint17I.jpg",
+            "images2/paint17II.jpg"
+        ],
+        "link":"images/samsunggaI0"
+    },
+    {
+        "id": 18,
+        "make": "OfficePoint Permanent Marker",
+        "model": "(12pcs)",
+        "category":"lower",
+        "description": "Bold, long-lasting marks you can rely on.",
+        "general":"appliances",
+        "year": 2023,
+        "color": "White",
+        "price": 1000,
+        "oldPrice":1100,
+        "image":"images2/marker18.jpg",
+        "link":"images/samsunggaI0"
+    },
+    {
+        "id": 19,
+        "make": "Faber Castell Colours Paint",
+        "model": "(6 Shades Multicolours)",
+        "category":"lower",
+        "description": "Premium poster colours with rich, vibrant shades.",
+        "general":"appliances",
+        "year": 2023,
+        "color": "White",
+        "price": 1000,
+        "oldPrice":1100,
+        "image":"images2/paint19.jpg",
+        "link":"images/samsunggaI0"
+    },
+    {
+        "id": 20,
+        "make": "Scrap Book",
+        "model": "",
+        "category":"lower",
+        "description": "Scrapbook – a creative space to capture memories, photos, and ideas.",
+        "general":"appliances",
+        "year": 2023,
+        "color": "White",
+        "price": 200,
+        "oldPrice":260,
+        "image":"images2/book20.jpg",
+        "link":"images/samsunggaI0"
     }
+
 ]

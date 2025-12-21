@@ -251,13 +251,13 @@ function displaycart() {
   carttotal.textContent = `Total: Ksh.${total.toLocaleString()}`;
 }
 
-// === PRODUCT PAGE ===
+/* === PRODUCT PAGE ===
 function openProduct(id) {
   const car = cars.find(c => c.id === id);
   if (!car) return;
   localStorage.setItem("selectedProduct", JSON.stringify(car));
   window.location.href = "carstv.html";
-}
+}*/
 
 // === MENU TOGGLE ===
 function togglemenu(){
@@ -282,48 +282,92 @@ document.addEventListener("click", function(e) {
 document.addEventListener("DOMContentLoaded", () => {
   // --- Display Cars Function ---
   function displaycars(filter = "", category = "all") {
-    carscontainer.innerHTML = "";
+  carscontainer.innerHTML = "";
 
-    const filteredCars = cars.filter(car => {
-      const namematch = (`${car.make} ${car.model}`).toLowerCase().includes(filter.toLowerCase());
-      const categorymatch = category === "all" || car.category === category;
-      return namematch && categorymatch;
-    });
+  const filteredCars = cars.filter(car => {
+    const namematch = (`${car.make} ${car.model}`).toLowerCase().includes(filter.toLowerCase());
+    const categorymatch = category === "all" || car.category === category;
+    return namematch && categorymatch;
+  });
 
-    const totalPages = Math.ceil(filteredCars.length / productsPerPage);
-    const startIndex = (currentPage - 1) * productsPerPage;
-    const endIndex = startIndex + productsPerPage;
-    const carsToShow = filteredCars.slice(startIndex, endIndex);
+  const totalPages = Math.ceil(filteredCars.length / productsPerPage);
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+  const carsToShow = filteredCars.slice(startIndex, endIndex);
 
-    
+  carsToShow.forEach(car => {
+    // Build carousel images
+    let imagesHtml = "";
+    let hasMultipleImages = Array.isArray(car.image) ? car.image.length > 1 : false;
 
-    carsToShow.forEach(car => {
-      const imgSrc = Array.isArray(car.image) ? car.image[0] : car.image;
-      const div = document.createElement("div");
-      div.classList.add("product-item");
-      div.setAttribute("data-category", car.category);
+    if (Array.isArray(car.image)) {
+      imagesHtml = car.image
+        .map(
+          (img, index) => `<img src="${img}" alt="${car.make} ${car.model}" class="carousel-image ${index === 0 ? 'active' : ''}" data-index="${index}" onclick="openProduct(${car.id}, ${index})">`
+        )
+        .join("");
+    } else {
+      imagesHtml = `<img src="${car.image}" alt="${car.make} ${car.model}" class="carousel-image active" data-index="0" onclick="openProduct(${car.id}, 0)">`;
+    }
 
-     let oldPriceHtml = "";
-  if (car.oldPrice) {
-    oldPriceHtml = `<p class="old-price"><strong><strong>Was: Ksh.${car.oldPrice.toLocaleString()}</strong></strong></p>`;
-  }
+    const div = document.createElement("div");
+    div.classList.add("product-item");
+    div.setAttribute("data-category", car.category);
 
-      div.innerHTML = `
-        <img src="${imgSrc}" alt="${car.make} ${car.model}" onclick="openProduct(${car.id})">
-        <div class="product-item-info">
-          <h3>${car.make} ${car.model}</h3>
-          <p class="price"><strong><strong>Price: Ksh.${car.price.toLocaleString()}</strong></strong></p>
-          ${oldPriceHtml}
-          <p class="des">${car.description || ""}</p>
-          <button class="addbtn" onclick="addToCart(${car.id})">Add To Cart</button>
-        </div>`;
-      carscontainer.appendChild(div);
-    });
+    let oldPriceHtml = "";
+    if (car.oldPrice) {
+      oldPriceHtml = `<p class="old-price"><strong>Was: Ksh.${car.oldPrice.toLocaleString()}</strong></p>`;
+    }
 
-    renderPagination(totalPages);
-    
-    updateshowcart();
-  }
+    div.innerHTML = `
+      <div class="product-carousel" id="carousel-${car.id}">
+        ${hasMultipleImages ? `<button class="prev">‹</button>` : ''}
+        <div class="carousel-wrapper">
+          ${imagesHtml}
+        </div>
+        ${hasMultipleImages ? `<button class="next">›</button>` : ''}
+      </div>
+      <div class="product-item-info">
+        <h3>${car.make} ${car.model}</h3>
+        <p class="price"><strong>Price: Ksh.${car.price.toLocaleString()}</strong></p>
+        ${oldPriceHtml}
+        <p class="des">${car.description || ""}</p>
+        <button class="addbtn" onclick="addToCart(${car.id})">Add To Cart</button>
+      </div>
+    `;
+
+    // Attach event listeners to arrows
+    const prevBtn = div.querySelector(".prev");
+    const nextBtn = div.querySelector(".next");
+
+    if (prevBtn) prevBtn.addEventListener("click", () => changeSlide(car.id, -1));
+    if (nextBtn) nextBtn.addEventListener("click", () => changeSlide(car.id, 1));
+
+    carscontainer.appendChild(div);
+  });
+
+  renderPagination(totalPages);
+  updateshowcart();
+}
+
+// JS function for slideshow navigation
+function changeSlide(carId, direction) {
+  const carousel = document.getElementById(`carousel-${carId}`);
+  if (!carousel) return; // safety check
+  const images = carousel.querySelectorAll(".carousel-image");
+  if (!images.length) return;
+
+  let currentIndex = Array.from(images).findIndex(img => img.classList.contains("active"));
+  if (currentIndex === -1) currentIndex = 0;
+
+  images[currentIndex].classList.remove("active");
+  currentIndex += direction;
+
+  if (currentIndex < 0) currentIndex = images.length - 1;
+  if (currentIndex >= images.length) currentIndex = 0;
+
+  images[currentIndex].classList.add("active");
+}
 
   // --- Pagination ---
   function renderPagination(totalPages) {
